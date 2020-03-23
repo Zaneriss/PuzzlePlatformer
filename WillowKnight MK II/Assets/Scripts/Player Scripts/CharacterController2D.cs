@@ -26,6 +26,8 @@ public class CharacterController2D : MonoBehaviour
 
 	[System.Serializable]
 	public class BoolEvent : UnityEvent<bool> { }
+
+    GameManager gm;
     
 
 	private void Awake()
@@ -34,10 +36,27 @@ public class CharacterController2D : MonoBehaviour
 
 		if (OnLandEvent == null)
 			OnLandEvent = new UnityEvent();
+
+        gm = FindObjectOfType<GameManager>();
         
 	}
 
-	private void FixedUpdate()
+    private void Update()
+    {
+        if (Input.GetButtonDown("Switch"))
+        {
+            if (gm.ShadowRealmActive)
+            {
+                gm.ShadowRealmActive = false;
+            }
+            else
+            {
+                gm.ShadowRealmActive = true;
+            }
+        }
+    }
+
+    private void FixedUpdate()
 	{
 		bool wasGrounded = m_Grounded;
 		m_Grounded = false;
