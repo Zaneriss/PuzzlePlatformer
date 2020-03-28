@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Cave Enterance
-  - LightPlatform
-  - DarkPlatform
+  - DarkObject
+  - LightObject
   layers:
   - Default
   - TransparentFX

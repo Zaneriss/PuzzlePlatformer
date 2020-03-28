@@ -6,14 +6,14 @@ public class GameManager : MonoBehaviour
 {
     public bool ShadowRealmActive;
 
-    public GameObject [] lightPlats;
-    public GameObject [] darkPlats;
+    public GameObject [] lightObjects;
+    public GameObject [] darkObjects;
 
 
     private void Start()
     {
-        lightPlats = GameObject.FindGameObjectsWithTag("LightPlatform");
-        darkPlats = GameObject.FindGameObjectsWithTag("DarkPlatform");
+        lightObjects = GameObject.FindGameObjectsWithTag("LightObject");
+        darkObjects = GameObject.FindGameObjectsWithTag("DarkObject");
     }
 
     private void Update()
@@ -21,12 +21,12 @@ public class GameManager : MonoBehaviour
 
         if (ShadowRealmActive == true)
         {
-            foreach (GameObject _lightPlats in lightPlats)
+            foreach (GameObject _lightPlats in lightObjects)
             {
                 _lightPlats.SetActive(false);
             }
 
-            foreach (GameObject _darkPlats in darkPlats)
+            foreach (GameObject _darkPlats in darkObjects)
             {
                 _darkPlats.SetActive(true);
             }
@@ -34,12 +34,12 @@ public class GameManager : MonoBehaviour
 
         else
         {
-            foreach (GameObject _lightPlats in lightPlats)
+            foreach (GameObject _lightPlats in lightObjects)
             {
                 _lightPlats.SetActive(true);
             }
 
-            foreach (GameObject _darkPlats in darkPlats)
+            foreach (GameObject _darkPlats in darkObjects)
             {
                 _darkPlats.SetActive(false);
             }
