@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/ShadowRealmFX.unity
+- path: Assets/Scenes/Light Realm.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
