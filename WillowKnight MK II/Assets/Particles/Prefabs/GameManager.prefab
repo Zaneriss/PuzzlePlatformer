@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e56841f8a3c235740a34551873af994e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ShadowRealmActive: 0
-  lightPlats: []
-  darkPlats: []
+  ShadowRealmActive: 1
+  lightObjects: []
+  darkObjects: []
+  DarkRealm: {fileID: 2100000, guid: 2b4c4f91aa5cb67418b85dfd6a1e6889, type: 2}
+  LightRealm: {fileID: 2100000, guid: 07b0fda8dbc360b44830f47a53bff38f, type: 2}

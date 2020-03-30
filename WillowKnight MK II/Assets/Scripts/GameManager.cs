@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
     public GameObject [] lightObjects;
     public GameObject [] darkObjects;
 
+    public Material DarkRealm;
+    public Material LightRealm;
+
 
     private void Start()
     {
@@ -18,9 +21,11 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
+       
         if (ShadowRealmActive == true)
         {
+            RenderSettings.skybox = DarkRealm;
+
             foreach (GameObject _lightPlats in lightObjects)
             {
                 _lightPlats.SetActive(false);
@@ -34,6 +39,8 @@ public class GameManager : MonoBehaviour
 
         else
         {
+
+            RenderSettings.skybox = LightRealm;
             foreach (GameObject _lightPlats in lightObjects)
             {
                 _lightPlats.SetActive(true);
