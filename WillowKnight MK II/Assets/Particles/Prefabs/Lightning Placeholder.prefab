@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5983594702848059354}
   m_Layer: 0
   m_Name: Lightning Placeholder
-  m_TagString: DarkObject
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
