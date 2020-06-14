@@ -28,12 +28,6 @@ public class CharacterController2D : MonoBehaviour
 	public class BoolEvent : UnityEvent<bool> { }
 
     GameManager gm;
-
-    public ParticleSystem DarkParticle;
-    public ParticleSystem LightParticle;
-
-    public GameObject DarkTransition;
-    public GameObject LightTransition;
     
 
 	private void Awake()
@@ -46,35 +40,20 @@ public class CharacterController2D : MonoBehaviour
         gm = FindObjectOfType<GameManager>();
         
 	}
-    //gm.ShadowRealmActive = false;
+
     private void Update()
     {
         if (Input.GetButtonDown("Switch"))
         {
             if (gm.ShadowRealmActive)
             {
-               
-                LightTransition.SetActive(true);             
-                Debug.LogWarning("TURNING TO LIGHT");
-                Invoke("SetRealmToLight", 1);
-                
-               
+                gm.ShadowRealmActive = false;
             }
-            else if(!gm.ShadowRealmActive)
+            else
             {
-                
-                DarkTransition.SetActive(true);               
-                Debug.LogWarning("TURNING TO DANKNESS");
-                Invoke("SetRealmToDark", 1);
-               
-
+                gm.ShadowRealmActive = true;
             }
         }
-
-        
-
-
-
     }
 
     private void FixedUpdate()
@@ -146,16 +125,4 @@ public class CharacterController2D : MonoBehaviour
 		transform.localScale = theScale;
 	}
 
-
-    void SetRealmToDark()
-    {
-        gm.ShadowRealmActive = true;
-        LightTransition.SetActive(false);
-    }
-
-    void SetRealmToLight()
-    {
-        gm.ShadowRealmActive = false;
-        DarkTransition.SetActive(false);
-    }
 }
